@@ -5,21 +5,69 @@
 </head>
 <style type="text/css">
 	body {
-		background-color: blue;
+		background-color: lightskyblue;
+	}
+	body > *+* {
+		padding-top: 12px;
 	}
 	.display {
 		width: 100%;
+		display: flex;
 	}
 
 	.display img {
 		width: 45%;
 		display: inline-block;
 	}
+
+	.arrow {
+		width: 10%;
+		height: 10%;
+		align-self: center;
+	    text-align: center;
+	}
+
+	.make_transparent_selector {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.start_color, .end_color {
+		width: 40%;
+	}
+	.start_color input, .end_color input {
+		width: 100%;
+	}
+
+	.download_button {
+		float: right;
+	}
 </style>
 <body>
+	<h2>Upload image!</h2>
+	<h4>This tool was made to filter colors out of a png to make areas of it transparent</h4>
 	<input type="file" accept="image/png"/>
 
+	<div class="make_transparent_selector">
+		<div class="start_color">
+			<div>Start</div>
+			<input type="color" class="start_color_input" value="#000000"/>
+		</div>
+		to
+		<div class="end_color">
+			<div>End</div>
+			<input type="color" class="end_color_input" value="#000000"/>
+		</div>
+	</div>
+	<div>Filter mode: <button class="flip_cut_button">Remove</button></div>
+
 	<div class="display"></div>
+	<div>
+		<button class="transform_button">Transform!</button>
+		<button class="download_button">Download!</button>
+	</div>
 </body>
 <script type="text/javascript" src="./app.js"></script>
 </html>
